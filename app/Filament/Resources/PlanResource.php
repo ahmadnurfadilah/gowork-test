@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\LocationResource\Pages;
-use App\Filament\Resources\LocationResource\RelationManagers;
-use App\Models\Location;
+use App\Filament\Resources\PlanResource\Pages;
+use App\Filament\Resources\PlanResource\RelationManagers;
+use App\Models\Plan;
 use Filament\Forms;
+use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -18,21 +19,27 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class LocationResource extends Resource
+class PlanResource extends Resource
 {
-    protected static ?string $model = Location::class;
+    protected static ?string $model = Plan::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-map-pin';
+    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 TextInput::make('name')
+                    ->required(),
+                TextInput::make('price')
                     ->required()
-                    ->searchable(),
-                TextInput::make('phone'),
-                Textarea::make('address')
+                    ->numeric(),
+                Textarea::make('description')
+                    ->required()
+                    ->columnSpanFull(),
+                TagsInput::make('benefits')
+                    ->reorderable()
+                    ->placeholder('New benefit')
                     ->columnSpanFull(),
                 Toggle::make('is_active')
                     ->label('Active'),
@@ -43,12 +50,12 @@ class LocationResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
-                TextColumn::make('phone'),
-                TextColumn::make('address')
-                    ->limit(50)
-                    ->size('xs'),
-                ToggleColumn::make('is_active')->label('Active'),
+                TextColumn::make('name')
+                    ->searchable(),
+                TextColumn::make('price')
+                    ->numeric(),
+                ToggleColumn::make('is_active')
+                    ->label('Active'),
             ])
             ->filters([
                 Tables\Filters\TrashedFilter::make(),
@@ -71,7 +78,7 @@ class LocationResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ManageLocations::route('/'),
+            'index' => Pages\ManagePlans::route('/'),
         ];
     }
 

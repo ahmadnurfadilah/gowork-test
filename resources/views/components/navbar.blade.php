@@ -2,13 +2,13 @@
 <nav class="h-20 flex items-center z-10 relative bg-white" x-data="{show: false}">
     <div class="container px-4 flex items-center justify-between relative">
         <div class="flex items-center gap-2.5">
-            <button class="block md:hidden" x-on:click="show = !show">
+            <button class="block md:hidden" x-on:click="show = !show" aria-label="Menu">
                 {{-- show hamburder icon when state is not show --}}
                 <x-icon.hamburger x-show="!show" x-cloak />
                 {{-- show hamburder icon when state is show --}}
                 <x-icon.close x-show="show" x-cloak />
             </button>
-            <a href="/">
+            <a href="/" aria-label="GoWork Logo">
                 <x-logo.go-work class="h-3.5" />
             </a>
         </div>

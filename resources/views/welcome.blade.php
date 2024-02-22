@@ -2,7 +2,7 @@
     <x-navbar />
 
     {{-- Header --}}
-    <div class="relative pb-16" x-data="slider">
+    <div class="relative md:pb-16" x-data="slider">
         <div class="grid grid-cols-1 md:grid-cols-12 relative pl-4 md:pl-0">
             {{-- Add space on md screen --}}
             <div class="md:col-span-2"></div>
@@ -19,7 +19,7 @@
                         <p class="pb-10">Introduction for lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
                         <div class="relative">
                             <x-icon.location class="absolute w-6 top-4 left-2.5 pointer-events-none text-[#92A2A6]" />
-                            <select name="location" id="location" class="block w-80 mb-2.5 border-[#BEC9CC] rounded-[14px] py-3 px-2.5 pl-10 text-[#92A2A6]">
+                            <select aria-label="Select location" name="location" id="location" class="block w-80 mb-2.5 border-[#BEC9CC] rounded-[14px] py-3 px-2.5 pl-10 text-[#92A2A6]">
                                 <option value="">Select location</option>
                                 <option value="Kemang">Kemang</option>
                                 <option value="Pacific Place">Pacific Place</option>
@@ -33,11 +33,11 @@
                     <div class="hidden md:block">
                         <div class="flex justify-end gap-7 py-7">
                             {{-- Previous image button --}}
-                            <button class="text-black" :class="{'opacity-30': !(selected >= (images.length - 1))}" x-on:click="prev()">
+                            <button class="text-black" :class="{'opacity-30': !(selected >= (images.length - 1))}" x-on:click="prev()" aria-label="Previous">
                                 <x-icon.arrow-left />
                             </button>
                             {{-- Next image button --}}
-                            <button class="text-black" :class="{'opacity-30': !(selected < (images.length - 1))}" x-on:click="next()">
+                            <button class="text-black" :class="{'opacity-30': !(selected < (images.length - 1))}" x-on:click="next()" aria-label="Next">
                                 <x-icon.arrow-right />
                             </button>
                         </div>
@@ -48,7 +48,7 @@
     </div>
 
     {{-- Plan --}}
-    <section class="my-20">
+    <section class="my-12 md:my-20">
         <div class="container px-4">
             <h2 class="uppercase font-bold text-2xl text-center tracking-widest text-dark mb-7">Find the plan Lorem Ipsum Dolor</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
@@ -68,11 +68,11 @@
                 <h4 class="font-bold text-2xl mb-5">All plans lorem ipsum</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
                     <div>
-                        <h6 class="font-semibold text-xl mb-2.5">Title Lorem Ipsum Dolor</h6>
+                        <h5 class="font-semibold text-xl mb-2.5">Title Lorem Ipsum Dolor</h5>
                         <p>Description lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                     <div>
-                        <h6 class="font-semibold text-xl mb-2.5">Title Lorem Ipsum Dolor</h6>
+                        <h5 class="font-semibold text-xl mb-2.5">Title Lorem Ipsum Dolor</h5>
                         <p>Description lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>

@@ -29,13 +29,13 @@
                     </a>
                 </div>
                 <div class="flex items-center gap-7">
-                    <a href="#">
+                    <a href="#" aria-label="Instagram">
                         <x-icon.instagram class="w-5 text-primary" />
                     </a>
-                    <a href="#">
+                    <a href="#" aria-label="LinkedIn">
                         <x-icon.linkedin class="w-5 text-primary" />
                     </a>
-                    <a href="#">
+                    <a href="#" aria-label="YouTube">
                         <x-icon.youtube class="w-5 text-primary" />
                     </a>
                 </div>
@@ -56,10 +56,10 @@
             <div class="md:col-span-2">
                 <div class="flex items-center gap-3 mb-8 md:mb-10">
                     <h6 class="font-bold text-sm">Download GoWork App for free now!</h6>
-                    <a href="#">
+                    <a href="#" aria-label="Download on AppStore">
                         <x-icon.apple class="w-6" />
                     </a>
-                    <a href="#">
+                    <a href="#" aria-label="Download on PlayStore">
                         <x-icon.android class="w-6" />
                     </a>
                 </div>

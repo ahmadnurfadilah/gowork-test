@@ -17,16 +17,18 @@
                     <div class="bg-white py-7 pl-4 pr-4 md:pl-0 md:pr-8 rounded-r-[10px] -translate-y-10">
                         <h1 class="font-display text-4xl lg:text-5xl mb-2.5">Heading for Lorem Ipsum Dolor sit Amet, Consectetur Elit.</h1>
                         <p class="pb-10">Introduction for lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                        <div class="relative">
-                            <x-icon.location class="absolute w-6 top-4 left-2.5 pointer-events-none text-[#92A2A6]" />
-                            <select aria-label="Select location" name="location" id="location" class="block w-80 mb-2.5 border-[#BEC9CC] rounded-[14px] py-3 px-2.5 pl-10 text-[#92A2A6]">
-                                <option value="">Select location</option>
-                                <option value="Kemang">Kemang</option>
-                                <option value="Pacific Place">Pacific Place</option>
-                                <option value="Fatmawati">Fatmawati</option>
-                            </select>
-                        </div>
-                        <x-button class="px-16 py-3">Find Space</x-button>
+                        <form action="/book">
+                            <div class="relative">
+                                <x-icon.location class="absolute w-6 top-4 left-2.5 pointer-events-none text-[#92A2A6]" />
+                                <select aria-label="Select location" name="location" id="location" class="block w-80 mb-2.5 border-[#BEC9CC] rounded-[14px] py-3 px-2.5 pl-10 text-[#92A2A6]">
+                                    <option value="">Select location</option>
+                                    @foreach ($locations as $location)
+                                        <option value="{{ $location->id }}">{{ $location->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <x-button class="px-16 py-3">Find Space</x-button>
+                        </form>
                     </div>
                     {{-- Add space on xl screen --}}
                     <div class="hidden xl:block"></div>
@@ -52,11 +54,9 @@
         <div class="container px-4">
             <h2 class="uppercase font-bold text-2xl text-center tracking-widest text-dark mb-7">Find the plan Lorem Ipsum Dolor</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
-                <x-card.plan title="Plan One" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
-                <x-card.plan title="Plan Two" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
-                <x-card.plan title="Plan Three" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
-                <x-card.plan title="Plan Four" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
-                <x-card.plan title="Plan Five" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
+                @foreach ($plans as $plan)
+                    <x-card.plan href="/book?plan={{ $plan->id }}" :title="$plan->name" :description="$plan->description" :price="$plan->price" :benefits="$plan->benefits" />
+                @endforeach
             </div>
             <p class="text-right text-[#929292] mt-5 text-xs">*VAT is applicable</p>
 

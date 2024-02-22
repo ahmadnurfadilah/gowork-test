@@ -31,4 +31,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'tripay' => [
+        'enabled' => env('TRIPAY_ENABLED', false),
+        'production' => env('TRIPAY_PRODUCTION', false),
+        'merchant' => env('TRIPAY_MERCHANT'),
+        'key' => env('TRIPAY_API_KEY'),
+        'secret' => env('TRIPAY_PRIVATE_KEY'),
+    ],
+
 ];

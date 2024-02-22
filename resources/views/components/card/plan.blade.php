@@ -1,4 +1,4 @@
-<div class="w-full border border-[#DAD3CE] rounded-2xl shadow-md">
+<a href="{{ $href ?? '#' }}" class="w-full border border-[#DAD3CE] rounded-2xl shadow-md hover:shadow-xl hover:border-primary transition-all">
     <div class="px-2.5 pt-2.5 pb-5 rounded-t-2xl text-dark space-y-2.5">
         <div class="flex flex-row md:flex-col items-center gap-2.5">
             <img src="/assets/img/icon/plan.webp" alt="Plan Icon" class="mx-auto w-[100px]" />
@@ -22,4 +22,4 @@
         <h6 class="font-semibold">Rp{{ number_format($price, 0, ',', '.') }}*</h6>
         <p class="font-semibold text-sm">/pax/month</p>
     </div>
-</div>
+</a>

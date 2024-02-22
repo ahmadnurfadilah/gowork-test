@@ -92,6 +92,8 @@
         </div>
     </section>
 
+    <x-footer />
+
     @push('scripts')
         <script>
             // Use alpineJS to handle slider function

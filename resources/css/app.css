@@ -8,3 +8,19 @@
 [x-cloak] {
     display: none !important;
 }
+
+.fade-up {
+    -webkit-animation: fade-up 400ms;
+    animation: fade-up 400ms;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: .3;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

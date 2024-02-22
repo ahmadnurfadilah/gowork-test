@@ -18,6 +18,7 @@
 
     @vite('resources/js/app.js')
     @livewireScriptConfig
+    @stack('scripts')
 </body>
 
 </html>

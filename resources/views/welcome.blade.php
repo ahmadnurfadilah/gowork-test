@@ -1,6 +1,7 @@
 <x-layouts.app>
     <x-navbar />
 
+    {{-- Header --}}
     <div class="relative pb-16" x-data="slider">
         <div class="grid grid-cols-1 md:grid-cols-12 relative pl-4 md:pl-0">
             {{-- Add space on md screen --}}
@@ -45,6 +46,21 @@
             </div>
         </div>
     </div>
+
+    {{-- Plan --}}
+    <section class="my-20">
+        <div class="container px-4">
+            <h2 class="uppercase font-bold text-2xl text-center tracking-widest text-dark mb-7">Find the plan Lorem Ipsum Dolor</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                <x-card.plan title="Plan One" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
+                <x-card.plan title="Plan Two" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
+                <x-card.plan title="Plan Three" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
+                <x-card.plan title="Plan Four" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
+                <x-card.plan title="Plan Five" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
+            </div>
+            <p class="text-right text-[#929292] mt-5 text-xs">*VAT is applicable</p>
+        </div>
+    </section>
 
     @push('scripts')
         <script>

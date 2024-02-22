@@ -59,6 +59,36 @@
                 <x-card.plan title="Plan Five" description="Introduction Lorem ipsum dolor sit amet, consectetur." :price="2800000" :benefits="['Benefit', 'Benefit', 'Benefit', 'Benefit']" />
             </div>
             <p class="text-right text-[#929292] mt-5 text-xs">*VAT is applicable</p>
+
+            <div class="my-[100px]">
+                <p class="text-dark font-light text-lg md:text-xl">Caption for lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+
+            <div class="my-[100px] text-dark">
+                <h4 class="font-bold text-2xl mb-5">All plans lorem ipsum</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-14">
+                    <div>
+                        <h6 class="font-semibold text-xl mb-2.5">Title Lorem Ipsum Dolor</h6>
+                        <p>Description lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div>
+                        <h6 class="font-semibold text-xl mb-2.5">Title Lorem Ipsum Dolor</h6>
+                        <p>Description lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-[100px]">
+                <div class="bg-gradient-to-r from-[#E5F5FA] to-[#EDF5F7] py-6 px-5 rounded-[10px] grid grid-cols-1 md:grid-cols-2 gap-2.5 items-center">
+                    <h6 class="font-semibold text-[22px]">Looking for a lorem ipsum dolor sit amet?</h6>
+                    <div>
+                        <a href="#" class="font-medium text-sm flex items-center justify-end gap-2 text-primary hover:text-[#BF8C15] font-inter">
+                            Call to Action
+                            <x-icon.chevron-right  />
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 

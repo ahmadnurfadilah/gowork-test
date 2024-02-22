@@ -6,6 +6,9 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
+        container: {
+            center: true,
+        },
         fontFamily: {
             sans: ["Open Sans", "ui-sans-serif", "system-ui"],
             inter: ["Inter", "ui-sans-serif", "system-ui"],
@@ -17,6 +20,8 @@ export default {
                 dark: "#1D2426",
                 space: "#243033",
                 deepsea: "#0D4759",
+                regalblue: "#004D66",
+                mystic: "#EBF1F2",
             }
         },
     },

@@ -29,8 +29,7 @@ class LocationResource extends Resource
         return $form
             ->schema([
                 TextInput::make('name')
-                    ->required()
-                    ->searchable(),
+                    ->required(),
                 TextInput::make('phone'),
                 Textarea::make('address')
                     ->columnSpanFull(),
@@ -43,7 +42,8 @@ class LocationResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name'),
+                TextColumn::make('name')
+                    ->searchable(),
                 TextColumn::make('phone'),
                 TextColumn::make('address')
                     ->limit(50)
